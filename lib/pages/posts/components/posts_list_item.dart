@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:getx_app/models/post.dart';
 
 class PostsListItem extends StatelessWidget {
   final Post post;
 
-  const PostsListItem({Key key, this.post}) : super(key: key);
+  const PostsListItem({Key? key, required this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class PostsListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      post.title,
+                      post.title ?? "",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       softWrap: false,
@@ -63,7 +62,7 @@ class PostsListItem extends StatelessWidget {
           ),
           SizedBox(height: 15),
           Text(
-            post.body,
+            post.body ?? "",
             style: TextStyle(color: Colors.black87),
           ),
           Row(

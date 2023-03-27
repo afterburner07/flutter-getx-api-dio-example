@@ -8,6 +8,7 @@ class PostsController extends GetxController {
   @override
   void onInit() {
     PostsProvider().getPostsList(
+      beforeSend: () {},
       onSuccess: (posts) {
         postsList.addAll(posts);
         isLoading = false;
